@@ -1,0 +1,66 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="hello-component-app-styles.html" />
+<link rel="import" href="../hc-card/hc-card.html" />
+
+<dom-module id="hello-component-app">
+    <template>
+        <style include="hello-component-app-styles"></style>
+        <div class="hc-header">
+            <div class="container">
+                <div class="component">&lt;hello-component&gt;&lt;/hello-component&gt;</div>
+                <h1>Hello Component!</h1>
+                <span class="subheader">Let us create a component in every major JavaScript framework.</span>
+            </div>
+        </div>
+        <div class="hc-buttons">
+            <paper-button raised>GitHub</paper-button>
+            <a href="http://bstavroulakis.com/blog/"><paper-button raised>Blog</paper-button></a>
+        </div>
+        <div class="container center">
+            <h2>Principles</h2>
+        </div>
+        <div class="hc-steps">
+            <div class="center">
+                Every framework uses the same logic
+            </div>
+            <div class="container">
+                <div> 
+                    <img src="/assets/images/component.jpg" />
+                    <div class="principle-note">1. Declare a Component</div>
+                </div>
+                <div>
+                    <img src="/assets/images/componentTemplate.jpg" />
+                    <div class="principle-note">2. Declare the Component's Template</div>
+                </div>
+                <div>
+                    <img src="/assets/images/componentReuse.jpg" />
+                    <div class="principle-note">3. Reuse the Component</div>
+                </div>
+            </div>
+        </div>
+        <div class="container center">
+            <h2>Working Examples</h2>
+        </div>
+        <div class="hc-main">
+            <div class="container">
+                <hc-card framework="angular2" image="/assets/images/angular.jpg" url="/examples/angular2/">Angular 2</hc-card>
+                <hc-card framework="angular1_5" image="/assets/images/angular.jpg" url="" disabled>Angular 1.5</hc-card>
+                <hc-card framework="react" image="/assets/images/react.jpg" url="/examples/react/">React.js</hc-card>
+                <hc-card framework="ember2" image="/assets/images/ember.jpg" url="/examples/ember2/">Ember.js</hc-card>
+                <hc-card framework="polymer" image="/assets/images/polymer.jpg" url="/examples/polymer/">Polymer.js</hc-card>
+                <hc-card framework="aurelia" image="/assets/images/aurelia.jpg" url="" disabled>Aurelia</hc-card>
+            </div>
+        </div>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "hello-component-app",
+        ready: function(){
+
+        }
+    });
+</script>

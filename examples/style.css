@@ -1,0 +1,44 @@
+body{
+    padding:0;
+    margin:0;
+}
+* {
+    font-family: 'Roboto', 'Noto', sans-serif;
+}
+iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.header{
+    height: 40px;
+    line-height: 40px;
+    background-color: #374ea3;
+}
+
+.header .example-name , .header .back{
+    float: left;
+}
+
+.header{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.header .back{
+    padding: 0 20px;
+    background-color: #ffffff;
+    color: #374ea3;
+    text-decoration: none;
+}
+
+.header .example-name{
+    font-size: 1.5rem;
+}
+
+.header img{
+    height: 40px;
+    float: left;
+    padding: 0 20px;
+}

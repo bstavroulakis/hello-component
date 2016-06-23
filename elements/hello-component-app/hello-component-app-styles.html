@@ -1,0 +1,109 @@
+<dom-module id="hello-component-app-styles">
+  <template>
+    <style>
+    * {
+      font-family: 'Roboto', 'Noto', sans-serif;
+    }
+    .container{
+        max-width: 1400px;
+        position: relative;
+        margin: 0 auto;
+    }
+    .hc-header{
+        -moz-box-shadow:0 5px 5px rgba(182, 182, 182, 0.75);
+        -webkit-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+        box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+        height: 161px;
+        width: 100%;
+        position: relative;
+        background-color: var(--color-main);
+    }
+    .hc-header .container{
+        height: 100%;
+    }
+    .hc-header h1, .hc-header .subheader{
+        position: absolute;
+        bottom: 10px;
+        left: 30px;
+        color: #efefef;
+        padding: 10px;
+    }
+    .hc-header h1{
+        bottom: 0px;
+        font-size: 3rem;
+    }
+    .hc-header .component{
+        font-size: 2rem;
+        opacity: 0.5;
+        color: var(--color-font-main);
+        position: absolute;
+        right: 0;
+        padding: 20px;
+    }
+
+    .hc-main .container, .hc-steps .container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: flex-start;
+        align-items: center;
+    }
+    .hc-main hc-card{
+        width: 325px;
+        height: 250px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-bottom: 80px;
+    }
+    .hc-steps .container{
+        padding: 40px 0;
+    }
+    .hc-steps .container > div{
+        text-align: center;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-bottom: 20px;
+    }
+    .principle-note{
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .hc-buttons{
+        width: 100%;
+        text-align: center;
+        padding: 30px 0 60px 0;
+    }
+
+    .hc-buttons paper-button{
+        background-color: var(--color-main);
+        color: var(--color-font-main);
+    }
+    .center{
+        text-align: center;
+    }
+
+    @media (max-width: 1023px){
+        .hc-main .container{
+            height: auto;
+            padding:0;
+        }
+    }
+
+    @media (max-width: 769px){
+        .component{
+            display: none;
+        }
+        .hc-header h1{
+            font-size: 2rem;
+            bottom: 30px;
+        }
+        .hc-header h1, .hc-header .subheader{
+            left: 0;
+        }
+    }
+    </style>
+  </template>
+</dom-module>

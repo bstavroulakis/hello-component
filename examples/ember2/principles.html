@@ -1,0 +1,28 @@
+<h3>Component Declaration</h3>
+<pre>
+  &lt;script>
+    App = Ember.Application.create();
+
+    Ember.Component.extend({
+      classNames: ["hello-component"]             <b>//Component Declaration</b>
+    });
+  &lt;/script>
+  &lt;script type="text/x-handlebars" id="components/hello-component">
+    &lt;div>Hello there&lt;/div>                       <b>//Template Declaration</b>
+  &lt;/script>
+
+</pre>
+<h3>Component Reuse</h3>
+<pre>
+  &lt;script type="text/x-handlebars">
+    {{hello-component}}                         <b>//Component Reuse</b>
+  &lt;/script>
+</pre>
+<h3>Result</h3>
+<div class="component-result">
+    Hello there
+</div>
+<div class="example-link hc-card">
+    <a href="/examples/ember2/index.html" target="_blank" class="hc-card"><paper-button raised class="hc-card">Plunkr Example</paper-button></a>
+    <paper-button class="close" on-tap="closeModal">Close</paper-button>
+</div>

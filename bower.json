@@ -1,0 +1,10 @@
+{
+  "name": "hellocomponent",
+  "dependencies": {
+    "polymer": "polymer/polymer#^1.5.0",
+    "paper-button": "PolymerElements/paper-button#^1.0.12",
+    "marked-element": "PolymerElements/marked-element#^1.1.3",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.2.0"
+  },
+  "devDependencies": {}
+}

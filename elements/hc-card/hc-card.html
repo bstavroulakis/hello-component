@@ -1,0 +1,143 @@
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html" />
+
+<dom-module id="hc-card">
+    <template>
+        <style>
+            .border{
+                border: 1px solid #cfcfcf;
+                padding: 10px;
+                height: 100%;
+                box-sizing: border-box;
+                border-radius: 1rem;
+                text-align: center;
+                cursor: pointer;
+            }
+            .border:hover{
+                -moz-box-shadow:0 5px 5px rgba(182, 182, 182, 0.75);
+                -webkit-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+                box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+            }
+            a{
+                text-decoration: none;
+                color: var(--color-main);
+            }
+            .content{
+                padding-top:3px;
+                font-size: 2rem;
+            }
+            .disabled{
+                color: #898989;
+                font-size: 1rem;
+            }
+            .disabled .content{
+                font-size: 1rem;
+            }
+            .disabled img{
+                -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+                filter: grayscale(100%);
+                opacity: 0.3;
+            }
+            #modalWrapper{
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0,0,0,0.5);
+                display: none;
+                height: 100%;
+                z-index: 1;
+            }
+            #modalWrapper.opened{
+                display: block;
+            }
+            #modal{
+                width: 80%;
+                margin: 50px auto;
+                background-color: #ffffff;
+                padding: 20px;
+                -moz-box-shadow:0 5px 5px rgba(0, 0, 0, 0.25);
+                -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+            }
+            .example-link{
+                width: 100%;
+                margin-top: 20px;
+                text-align: right;
+            }
+            .example-link a paper-button{
+                text-decoration: none;
+                background-color: var(--color-main);
+                color: #ffffff;
+            }
+        </style>
+        <div class="border">
+            <template  is="dom-if" if="{{!disabled}}">
+                <div on-tap="openModal">
+                    <img src="{{image}}" />
+                    <div class="content">
+                        <content></content>
+                    </div>
+                </div>
+            </template>
+            <template  is="dom-if" if="{{disabled}}">
+                <div class="disabled">
+                    <img src="{{image}}" />
+                    <div class="content">
+                        <content></content> (Coming Soon!)
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div id="modalWrapper" on-tap="closeModal">
+            <div id="modal">
+
+            </div>
+        </div>
+        <iron-ajax id="modalRequest" method="GET" handle-as="text" on-response="handleResponse"></iron-ajax>
+        <!--
+                <a href="{{url}}" target="_blank">
+                    <img src="{{image}}" />
+                    <div class="content">
+                        <content></content>
+                    </div>
+                </a>
+        -->
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "hc-card",
+        properties:{
+            disabled: {
+                type: Boolean,
+                value: false,
+                reflectToAttribute: true
+            },
+            modalToggled:{
+                type: Boolean,
+                value: false
+            },
+            framework: {
+                type: String,
+                value: "",
+                reflectToAttribute: true
+            }
+        },
+        openModal: function(){
+            this.$.modalRequest.url = "/examples/" + this.framework + "/principles.html";
+            this.$.modalRequest.generateRequest();
+        },
+        closeModal: function(){
+            this.$.modalWrapper.classList.remove("opened");
+        },
+        handleResponse: function(e){
+            this.$.modal.innerHTML = e.detail.response;
+            this.$.modalWrapper.classList.add("opened");
+        },
+        ready: function(){
+
+        }
+    });
+</script>

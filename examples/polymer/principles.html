@@ -1,0 +1,27 @@
+<h3>Component Declaration</h3>
+<pre>
+
+    &lt;dom-module id="hello-element">
+      &lt;template>Hello there&lt;/template>          <b>//Template Declaration</b>
+    &lt;/dom-module>
+    
+    &lt;script>
+      HTMLImports.whenReady(function(){
+        Polymer({
+          is: "hello-element"                   <b>//Component Declaration</b>
+        })
+      })  
+    &lt;/script>
+</pre>
+<h3>Component Reuse</h3>
+<pre>
+    &lt;hello-component>&lt;/hello-component>         <b>//Component Reuse</b>
+</pre>
+<h3>Result</h3>
+<div class="component-result">
+    Hello there
+</div>
+<div class="example-link hc-card">
+    <a href="/examples/polymer/index.html" target="_blank" class="hc-card"><paper-button raised class="hc-card">Plunkr Example</paper-button></a>
+    <paper-button class="close" on-tap="closeModal">Close</paper-button>
+</div>

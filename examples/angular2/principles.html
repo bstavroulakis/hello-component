@@ -1,0 +1,25 @@
+<h3>Component Declaration</h3>
+<pre>
+    import {bootstrap}    from 'angular2/platform/browser';
+    import {Component} from 'angular2/core';
+
+    @Component({
+    selector: 'hello-component',
+    template: '&lt;div>Hello there&lt;/div>'          <b>//Template Declaration</b>
+    })
+
+    export class HelloComponent { }             <b>//Component Declaration</b>
+    bootstrap(HelloComponent);
+</pre>
+<h3>Component Reuse</h3>
+<pre>
+    &lt;hello-component>&lt;/hello-component>         <b>//Component Reuse</b>
+</pre>
+<h3>Result</h3>
+<div class="component-result">
+    Hello there
+</div>
+<div class="example-link hc-card">
+    <a href="/examples/angular2/index.html" target="_blank" class="hc-card"><paper-button raised class="hc-card">Plunkr Example</paper-button></a>
+    <paper-button class="close" on-tap="closeModal">Close</paper-button>
+</div>
