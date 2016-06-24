@@ -1,0 +1,19 @@
+<h3>Component Declaration</h3>
+<pre>
+    var module = angular.module("app", []);
+    module.component("helloComponent", {             <b>//Component Declaration</b>
+        template: "Hello there"                     <b>//Template Declaration</b>
+    });
+</pre>
+<h3>Component Reuse</h3>
+<pre>
+    &lt;hello-component>&lt;/hello-component>         <b>//Component Reuse</b>
+</pre>
+<h3>Result</h3>
+<div class="component-result">
+    Hello there
+</div>
+<div class="example-link hc-card">
+    <a href="/examples/angular1_5/index.html" target="_blank" class="hc-card"><paper-button raised class="hc-card">Plunkr Example</paper-button></a>
+    <paper-button class="close" on-tap="closeModal">Close</paper-button>
+</div>
