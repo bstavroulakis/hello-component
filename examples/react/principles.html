@@ -1,12 +1,7 @@
 <h3>Component Declaration</h3>
 <pre>
-    var HelloComponent = React.createClass({
-    render: function() {
-        return (
-        &lt;div>Hello there&lt;/div>                   <b>//Template Declaration</b>
-        );
-    }
-    });
+
+    function HelloComponent() { return &lt;div>Hello there&lt;/div> }              <b>//Template Declaration</b>
 
     ReactDOM.render(
         &lt;HelloComponent />,                      <b>//Component Declaration</b>
