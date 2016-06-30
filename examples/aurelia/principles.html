@@ -1,0 +1,22 @@
+<h3>Component Declaration</h3>
+<pre>
+  <template>Hello there</template> //Template declaration
+</pre>
+
+<h3>Component Reuse</h3>
+<pre>
+  <template>
+    <require from="./hello-component.html"></require>
+    <hello-component></hello-component> //Component reuse
+  </template>
+</pre>
+
+<h3>Result</h3>
+<div class="component-result">
+    Hello there
+</div>
+
+<div class="example-link hc-card">
+    <a href="/examples/aurelia/index.html" target="_blank" class="hc-card"><paper-button raised class="hc-card">Gist.run Example</paper-button></a>
+    <paper-button class="close" on-tap="closeModal">Close</paper-button>
+</div>
