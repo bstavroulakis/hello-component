@@ -1,0 +1,23 @@
+<h3>Component Declaration</h3>
+<pre>
+
+    Vue.component('hello-component', {                      <b>//Component Declaration</b>
+        template: '&lt;div>Hello there&lt;/div>'              <b>//Template Declaration</b>
+    })
+    new Vue({
+        el: '#app'
+    })
+
+</pre>
+<h3>Component Reuse</h3>
+<pre>
+    &lt;hello-component>&lt;/hello-component>                      <b>//Component Reuse</b>
+</pre>
+<h3>Result</h3>
+<div class="component-result">
+    Hello there
+</div>
+<div class="example-link hc-card">
+    <a href="/examples/vue/index.html" target="_blank" class="hc-card"><paper-button raised class="hc-card">Plunkr Example</paper-button></a>
+    <paper-button class="close" on-tap="closeModal">Close</paper-button>
+</div>
